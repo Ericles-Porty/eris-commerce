@@ -1,18 +1,20 @@
 <?php
 
 use \Hcode\DB\Sql;
+use \Slim\Slim;
+use \Hcode\Page;
 
 require_once("vendor/autoload.php");
 
-$app = new \Slim\Slim();
+$app = new Slim();
 
 $app->config('debug', true);
 
 $app->get('/', function () {
 
-	$sql = new Sql();
-	$lixo = $sql->select("SELECT * FROM tb_users");
-	echo json_encode($lixo);
+	$page = new Page();
+
+	$page->setTpl("index");
 });
 
 $app->run();
