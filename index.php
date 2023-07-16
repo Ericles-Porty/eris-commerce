@@ -288,4 +288,20 @@ $app->post("/admin/categories/{idcategory}", function ($request, $response, $arg
 	exit;
 });
 
+$app->get('/category/{idcategory}', function ($request, $response, $args) {
+
+	$category = new Category();
+
+	$idcategory = (int)$args['idcategory'];
+
+	$category->get($idcategory);
+
+	$page = new Page();
+
+	$page->setTpl('category', [
+		'category' => $category->getValues(),
+		'products' => []
+	]);
+});
+
 $app->run();
