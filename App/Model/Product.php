@@ -1,12 +1,11 @@
 <?php
 
-namespace Hcode\Model;
+namespace App\Model;
 
-use \Hcode\DB\Sql;
-use \Hcode\Model;
-use \Hcode\Mailer;
+use \App\DB\Sql;
+use \App\Model\BaseModel;
 
-class Product extends Model
+class Product extends BaseModel
 {
 
 	public static function listAll()
@@ -155,12 +154,14 @@ class Product extends Model
 
 		$sql = new Sql();
 
-		return $sql->select("
-			SELECT * FROM tb_categories a INNER JOIN tb_productscategories b ON a.idcategory = b.idcategory WHERE b.idproduct = :idproduct
-		", [
-
-			':idproduct' => $this->getidproduct()
-		]);
+		return $sql->select(
+			"SELECT * 
+				FROM tb_categories a 
+				INNER JOIN tb_productscategories b 
+				ON a.idcategory = b.idcategory
+				WHERE b.idproduct = :idproduct",
+			[':idproduct' => $this->getidproduct()]
+		);
 	}
 
 	public static function getPage($page = 1, $itemsPerPage = 10)

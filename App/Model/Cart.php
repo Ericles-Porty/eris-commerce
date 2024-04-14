@@ -1,13 +1,12 @@
 <?php
 
-namespace Hcode\Model;
+namespace App\Model;
 
-use \Hcode\DB\Sql;
-use \Hcode\Model;
-use \Hcode\Mailer;
-use \Hcode\Model\User;
+use \App\DB\Sql;
+use \App\Model\BaseModel;
+use \App\Model\User;
 
-class Cart extends Model
+class Cart extends BaseModel
 {
 
 	const SESSION = "Cart";

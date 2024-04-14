@@ -1,12 +1,11 @@
 <?php
 
-namespace Hcode\Model;
+namespace App\Model;
 
-use \Hcode\DB\Sql;
-use \Hcode\Model;
-use \Hcode\Mailer;
+use \App\DB\Sql;
+use \App\Model\BaseModel;
 
-class Category extends Model
+class Category extends BaseModel
 {
 
 	public static function listAll()

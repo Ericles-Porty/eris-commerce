@@ -1,12 +1,12 @@
 <?php
 
-namespace Hcode\Model;
+namespace App\Model;
 
-use \Hcode\DB\Sql;
-use \Hcode\Model;
-use \Hcode\Model\Cart;
+use \App\DB\Sql;
+use \App\Model\BaseModel;
+use \App\Model\Cart;
 
-class Order extends Model
+class Order extends BaseModel
 {
 
 	const SUCCESS = "Order-Success";

@@ -1,11 +1,11 @@
 <?php
 
-namespace Hcode\Model;
+namespace App\Model;
 
-use \Hcode\DB\Sql;
-use \Hcode\Model;
+use App\DB\Sql;
+use App\Model\BaseModel;
 
-class Address extends Model
+class Address extends BaseModel
 {
 
 	const SESSION_ERROR = "AddressError";

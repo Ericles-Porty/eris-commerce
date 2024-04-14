@@ -1,12 +1,12 @@
 <?php
 
-namespace Hcode\Model;
+namespace App\Model;
 
-use \Hcode\DB\Sql;
-use \Hcode\Model;
-use \Hcode\Mailer;
+use \App\DB\Sql;
+use \App\Model\BaseModel;
+use \App\Mailer\Mailer;
 
-class User extends Model
+class User extends BaseModel
 {
 
 	const SESSION = "User";
